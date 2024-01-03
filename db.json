@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "title": "cherive",
+      "place": "Tevreg Zeina",
+      "Email": "21029@supnum",
+      "Numero": 22234555,
+      "Id_infant": 2,
+      "id": 4
+    },
+    {
+      "title": "cherive",
+      "place": "Tevreg Zeina",
+      "Email": "21029@supnum",
+      "Numero": 22234555,
+      "Id_infant": 2,
+      "id": 3
+    },
+    {
+      "title": "cherive",
+      "place": "Tevreg Zeina",
+      "Email": "21029@supnum",
+      "Numero": 22234555,
+      "Id_infant": 2,
+      "id": 2
+    },
+    {
+      "title": "med",
+      "id": 5
+    },
+    {
+      "title": "sidi",
+      "place": "benechab",
+      "Email": "sdeiebeidy@gmail.com",
+      "Numero": "44106246",
+      "Id_infant": null,
+      "id": 6
+    },
+    {
+      "title": "emin",
+      "place": "touginine",
+      "Email": "21011@supnum.mr",
+      "Numero": "34567889",
+      "id": 7
+    },
+    {
+      "title": "ahmedou",
+      "place": "tevreg zeina",
+      "Email": "21076@supnum.mr",
+      "Numero": "12436789",
+      "id": 8
+    },
+    {
+      "title": "demin",
+      "place": "rab24",
+      "Email": "demin@gamail.com",
+      "Numero": "345678",
+      "Id_infant": null,
+      "id": 9
+    }
+  ],
+  "cours": [
+    {
+      "name": "Demin carni",
+      "id": 1,
+      "heur": "22:30",
+      "dater": "22-24-22023",
+      "Nbrseance": 4,
+      "Status": "Paye",
+      "id_prenant": 4,
+      "id_professeur": 3
+    },
+    {
+      "name": "Emin taleb ahmed",
+      "id": 1,
+      "heur": "22:30",
+      "dater": "22-24-22023",
+      "Nbrseance": 4,
+      "Status": "Paye",
+      "id_prenant": 1,
+      "id_professeur": 3
+    },
+    {
+      "name": "Sidi Ebeidy",
+      "id": 2,
+      "heur": "22:30",
+      "dater": "22-24-22023",
+      "Nbrseance": 4,
+      "Status": "Paye",
+      "id_prenant": 4,
+      "id_professeur": 3
+    },
+    {
+      "name": "Med nouhe",
+      "id": 3,
+      "heur": "22:30",
+      "dater": "22-24-22023",
+      "Nbrseance": 4,
+      "Status": "Paye",
+      "id_prenant": 2,
+      "id_professeur": 3
+    }
+  ]
+}
