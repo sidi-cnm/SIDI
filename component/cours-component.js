@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     elevation: 15,
     borderRadius: 20,
     width: 350,
-    marginTop:20,
+    
     marginBottom:5,
-    left:10
+    left:22
   },
   infoContainer: {
     padding: 10,
@@ -43,18 +43,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'black',
     padding: 10,
-    right:80
+    
   },
   heur: {
     fontSize: 19,
     color: 'black',
-    left:-25
+    
   },
   date: {
     fontSize: 19,
     color: 'black',
     top:20,
-    left:-25
+    
   },
   nbr: {
     fontSize: 19,

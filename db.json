@@ -25,10 +25,6 @@
       "id": 2
     },
     {
-      "title": "med",
-      "id": 5
-    },
-    {
       "title": "sidi",
       "place": "benechab",
       "Email": "sdeiebeidy@gmail.com",
@@ -49,14 +45,6 @@
       "Email": "21076@supnum.mr",
       "Numero": "12436789",
       "id": 8
-    },
-    {
-      "title": "demin",
-      "place": "rab24",
-      "Email": "demin@gamail.com",
-      "Numero": "345678",
-      "Id_infant": null,
-      "id": 9
     }
   ],
   "cours": [
@@ -68,7 +56,7 @@
       "Nbrseance": 4,
       "Status": "Paye",
       "id_prenant": 4,
-      "id_professeur": 3
+      "id_professeur": 11
     },
     {
       "name": "Emin taleb ahmed",
@@ -78,7 +66,7 @@
       "Nbrseance": 4,
       "Status": "Paye",
       "id_prenant": 1,
-      "id_professeur": 3
+      "id_professeur": 12
     },
     {
       "name": "Sidi Ebeidy",
@@ -98,7 +86,45 @@
       "Nbrseance": 4,
       "Status": "Paye",
       "id_prenant": 2,
-      "id_professeur": 3
+      "id_professeur": 13
+    }
+  ],
+  "professeurs": [
+    {
+      "title": "mouhmed",
+      "place": "arafat",
+      "Email": "med@gmail.com",
+      "Numero": "987654321",
+      "id": 11,
+      "dateofbirth": "12-02-2003",
+      "whatsapp": "31453435"
+    },
+    {
+      "title": "Sidi",
+      "place": "Nktt ",
+      "Email": "21031@supnum.mr",
+      "Numero": "45454644",
+      "dateofbirth": "11-12-2001",
+      "whatsapp": "34454566",
+      "id": 12
+    },
+    {
+      "title": "Khatou",
+      "place": "NKT",
+      "Email": "21016@supnum.mr",
+      "Numero": "34554545",
+      "dateofbirth": "12-12-2002",
+      "whatsapp": "35656656",
+      "id": 13
+    },
+    {
+      "title": "Rrrr",
+      "place": "Hhhh",
+      "Email": "21031@supnum.mr",
+      "Numero": "2355555",
+      "dateofbirth": "12-12-2000",
+      "whatsapp": "23455554",
+      "id": 14
     }
   ]
 }

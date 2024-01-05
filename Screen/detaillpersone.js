@@ -1,122 +1,123 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { Icon, Button } from 'react-native-elements';
 import axios from 'axios';
-import { useRoute } from '@react-navigation/native';
-import { styleProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Button } from 'react-native-elements';
-import { useNavigation } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
+
+const { width, height } = Dimensions.get('window');
 
 export default function Detaille() {
   const [data, setData] = useState([]);
-
   const route = useRoute();
   const { id } = route.params;
 
   useEffect(() => {
-    axios.get(`https://ef36-41-188-101-189.ngrok-free.app/users/?id=${id}`).then((res) => {
+    axios.get(`http://192.168.17.160:3001/users/?id=${id}`).then((res) => {
       setData(res.data);
       console.log(id);
     });
   }, []);
 
-  const nav = useNavigation()
-  const back =()=>{
-    nav.navigate("IN")
-  }
-  
-  return (
-    <View style={styles.Alldata}>
+  const nav = useNavigation();
+  const back = () => {
+    nav.navigate('IN');
+  };
 
-    <View style={{width:400, height:"auto"}}>
-    <Button  buttonStyle={{
-          backgroundColor: '#0A1C7A',
-          borderRadius: 10,
-          left:240,
-          height:33,
-          width:70}} 
-          titleStyle={{
-             left:5,
-             height:20,
-             top:-3
-          }}
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.header}>
+        <Button
+          buttonStyle={styles.backButton}
+          titleStyle={styles.backButtonTitle}
           onPress={back}
-          title="back"
-          />
-      </View>    
-    <Text style={{fontWeight:"bold", fontSize:25, left:-29,top:20}}>informations Personelle</Text>
-    <View style={styles.btndelete} >
-      <Icon name="user" size={105} type="material" color="#0A1C7A" />
-    </View>
+          title="Back"
+        />
+      </View>
+      <Text style={styles.title}>Détails de Famille</Text>
       {data.map((item) => (
-        <View style={styles.data} key={item.id}>
-        <Text style={{position:"absolute", left:152, top:24, fontSize:25, fontWeight:"bold" }}>Detaille de Famille</Text>
-        <Text style={styles.title}>{item.title}</Text>
-        <Icon name="map-marker" style={{left:-22 , top:65}} size={22} type="material" color="#0A1C7A" />
-          <Text style={styles.place}>{item.place}</Text>
-        <Icon name="envelope" style={{left:-22 , top:110}} size={22} type="material" color="#0A1C7A" />
-          <View style={styles.line} /> 
-          <Text style={styles.Email}>{item.Email}</Text>
+        <View style={styles.detailsContainer} key={item.id}>
+          <View style={styles.iconContainer}>
+            <Icon name="user" size={width * 0.1} type="font-awesome" color="#0A1C7A" />
+            <Text style={styles.itemTitle}>{item.title}</Text>
+          </View>
           <View style={styles.line} />
-          <Text style={styles.Numero}>{item.Numero}</Text>
-          <Icon name="phone" style={{left:-22 , top:-2}} size={22} type="material" color="#0A1C7A" />
+          <View style={styles.infoRow}>
+            <Icon name="map-marker" size={width * 0.05} type="font-awesome" color="#0A1C7A" />
+            <Text style={styles.place}>{item.place}</Text>
+          </View>
           <View style={styles.line} />
+          <View style={styles.infoRow}>
+            <Icon name="envelope" size={width * 0.05} type="font-awesome" color="#0A1C7A" />
+            <Text style={styles.email}>{item.Email}</Text>
+          </View>
           <View style={styles.line} />
-          
+          <View style={styles.infoRow}>
+            <Icon name="phone" size={width * 0.05} type="font-awesome" color="#0A1C7A" />
+            <Text style={styles.numero}>{item.Numero}</Text>
+          </View>
+          <View style={styles.line} />
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  Alldata: {
-    margin: 50,
-    width:"auto",
-    padding: 0,
+  container: {
+    flexGrow: 1,
+    padding: 20,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginBottom: height * 0.02,
+  },
+  backButton: {
+    backgroundColor: '#0A1C7A',
+    borderRadius: 10,
+    height: height * 0.04,
+    width: width * 0.2,
+  },
+  backButtonTitle: {
+    left: width * 0.01,
+    height: height * 0.02,
+    top: -3,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: width * 0.06,
+    marginTop: height * 0.02,
+    marginLeft: width * 0.1,
+  },
+  detailsContainer: {},
+  iconContainer: {
+    alignItems: 'center',
+    marginTop: height * 0.01,
+  },
+  itemTitle: {
+    fontSize: width * 0.04,
+    marginTop: height * 0.01,
   },
   line: {
     borderBottomWidth: 1,
-    top:-40,
-    borderColor: '#DAD8D8', // Choose your line color
-    marginBottom: 50, // Adjust spacing between lines and Text elements
+    borderColor: '#DAD8D8',
+    marginBottom: height * 0.03,
   },
-  data: {
-    backgroundColor: 'white',
-    width: 410,
-    height: 630,
-    elevation: 15,
-    left: -70,
-    borderRadius: 35,
-    top:180,
+  infoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: height * 0.01,
   },
   place: {
-    left: -68,
-    fontSize:20,
-    top: 38,
+    marginLeft: width * 0.03,
+    fontSize: width * 0.04,
   },
-  Email: {
-    left: -68,
-    fontSize:20,
-    top: 30,
+  email: {
+    marginLeft: width * 0.03,
+    fontSize: width * 0.04,
   },
-  Numero: {
-    left: -68,
-    fontSize:20,
-    top: 24,
+  numero: {
+    marginLeft: width * 0.03,
+    fontSize: width * 0.04,
   },
-
- 
-  title:{
-    top:-120,
-    left:-141,
-    fontWeight:"bold",
-    fontSize:39
-  },
-
-  btndelete:{
-    top:70,
-    left:-100
-  }
-  
 });
